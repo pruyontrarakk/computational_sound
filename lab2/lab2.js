@@ -1,4 +1,3 @@
-// let activeModFreq = {} //holds active frequency
 let activeGainNodes = {}
 let activeOscillators = {}
 let modFreqVal = 100; // gets the frequency value from the slider
@@ -20,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     indexSlider.disabled = true;
     modSlider.disabled = true;
+    lfoSlider.disabled = false;
 
 
     for (let i = 0; i < synths.length; i++){
