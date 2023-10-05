@@ -1,4 +1,3 @@
-// let activeModFreq = {} //holds active frequency
 let activeGainNodes = {}
 let activeOscillators = {}
 let modFreqVal = 100; // gets the frequency value from the slider
@@ -32,17 +31,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 partialSelect.disabled = false;
                 indexSlider.disabled = true;
                 modSlider.disabled = true;
-                lfoSlider.disabled = false;
             } else if (synthesisType === 'am'){
                 partialSelect.disabled = true;
                 indexSlider.disabled = true;
                 modSlider.disabled = false;
-                lfoSlider.disabled = true;
             } else if (synthesisType === 'fm') {
                 partialSelect.disabled = true;
                 indexSlider.disabled = false;
                 modSlider.disabled = false;
-                lfoSlider.disabled = true;
             }
         }
     }
@@ -144,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         //the LFO
         let lfoOsc = audioCtx.createOscillator();
         lfoOsc.frequency.setValueAtTime(lfoFreq, audioCtx.currentTime)
-        lfoOsc.connect(gainNode).connect(globalGain);
+        lfoOsc.connect(gainNode);
         activeLFO[key] = lfoOsc;
         lfoOsc.start()
         
@@ -202,11 +198,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
         modulatorFreq.connect(depth).connect(modulated.gain); //.connect is additive, so with [-0.5,0.5] and 0.5, the modulated signal now has output gain at [0,1]
         carrier.connect(modulated);
 
-        oscillators.push(carrier) //
-        oscillators.push(modulatorFreq) //
+        oscillators.push(carrier) 
+        oscillators.push(modulatorFreq)
 
         allGain.push(modulated)
         allGain.push(depth)
+
+        //the LFO
+        let lfoOsc = audioCtx.createOscillator();
+        lfoOsc.frequency.setValueAtTime(lfoFreq, audioCtx.currentTime)
+        lfoOsc.connect(modulated);
+        activeLFO[key] = lfoOsc;
+        lfoOsc.start()
 
 
         activeOscillators[key] = oscillators
@@ -236,6 +239,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
         for (let i = 0; i < activeOscillators[key].length; i++) {
             activeOscillators[key][i].stop(audioCtx.currentTime + 0.02);
         }
+
+        activeLFO[key].stop(audioCtx.currentTime + 0.02);
+        delete activeLFO[key]
 
         delete activeGainNodes[key];
     }
@@ -275,6 +281,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
         activeOscillators[key] = oscillators 
         activeGainNodes[key] = allGain
 
+        //the LFO
+        let lfoOsc = audioCtx.createOscillator();
+        lfoOsc.frequency.setValueAtTime(lfoFreq, audioCtx.currentTime)
+        lfoOsc.connect(gainNode);
+        activeLFO[key] = lfoOsc;
+        lfoOsc.start()
+
         carrier.start();
         modulatorFreq.start();
 
@@ -298,6 +311,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
         for (let i = 0; i < activeOscillators[key].length; i++) {
             activeOscillators[key][i].stop(audioCtx.currentTime + 0.02);
         }
+
+        activeLFO[key].stop(audioCtx.currentTime + 0.02);
+        delete activeLFO[key]
     
         delete activeGainNodes[key];
     }
