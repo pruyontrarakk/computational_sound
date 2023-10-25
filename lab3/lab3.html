@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 3</title>
+
+    
+    <link rel = "stylesheet" href="style.css" />
+
+</head>
+
+<div class="banner-header">
+    Welcome to my Lab3 for Computational Sound!
+</div>
+<br><br>
+
+
+  <body>
+    <button class = 'my_button' id = 'brook_button' "> Babbling Brook </button>
+    <button class = 'my_button' id = 'fire_button' "> Fire Sounds </button>
+    <br><br><br>
+    <div class = 'container'>
+
+        <p><b>Fire Sounds Explanation</b></p>
+
+        <p style="text-align: left;">The sound that I chose to recreate is fire, which inludes 3 parts to the sound on top of 
+        the white noise: the hissing, the crackling, and the lapping. Below is the audio signal flow graph created by the WebAudio 
+        visualizer Chrome extention. </p>
+        <br>
+        <img src="webaudio_visual.jpg" style="width: 60%;">
+        <br> <br>
+        <p style="text-align: left;"><b>Hissing:</b> </p>
+        <p style="text-align: left;">I started off by making two oscillators of different waveforms (square and triangle) which are 
+            connected to a gain node to create somewhat "sporatic" hissing sounds. I chose to use two oscillators instead of just one
+            because occasional overlap between the two oscillators can create irregularities in both the sound and timing, which
+            mimics the unpredictable nature of fire. On the white noise, I used a low-pass filter which filtered out
+            frequencies above 1 Hz and a high-pass filter which filtered out frequencies below 1000 Hz to really create the
+            hissing sound. Overall, the hissing, although an important characteristic of fire, seems the most quiet as it blends 
+            a bit into the lapping noise. </p>
+        <br> <br>
+        <p style="text-align: left;"><b>Crackling:</b> </p>
+        <p style="text-align: left;">When trying to do the crackling noises, I needed to make sure that they were short and sharp, and
+        that they would occur at random times. To do that, I used several SetInterval functions with the amplitude envelope inside in 
+        order to make various crackles with different amplitides and decay times for a more realistic sound. By using more than one SetInterval
+        function with the interval times set differently for each one, it allowed me to make the crackling more randomly placed. Also,
+        even though I set the amplitudes of each of the crackles in the SetInterval functions to be different, I made sure that they were
+        not too loud as these short, sudden noises stand out. </p>
+        <br> <br>
+        <p style="text-align: left;"><b>Lapping:</b> </p>
+        <p style="text-align: left;">I start off by using a bandpass filter, allowing only frequencies of around 30 Hz to pass through
+        with a bandwidth of 5Hz. This output is then passed through a highpass filter that further shapes the sound by removing any frequencies 
+        lower than 25 Hz. In addition, I also used a wave shaper to introduce distortion by nonlinearly altering the waveform. The distortion
+        created helps further the lapping sound as it helps reduce the intensity of the sound if it gets too high. I connected all of this to 
+        the white noise. To make sure that this lapping is louder than the hissing and the crackling, I amplified the audio signal by 8. </p>
+        <br><br>
+
+    </div>
+        
+  </body>
+
+  <script src="lab3.js" ></script>
+
+
+</html>

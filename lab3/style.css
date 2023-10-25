@@ -1,0 +1,60 @@
+body {
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: palatino;
+}
+
+
+.banner-header {
+    color: #000000;
+    padding: 20px;
+    font-size: 30px; 
+}
+
+
+.left-aligned-text {
+    text-align: left;
+  }
+
+
+.my_button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #ddd4e3;
+    color: #303030; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .my_button:active {
+    transform: scale(0.95);
+    background-color: #a390af;
+  }
+
+  .container {
+    width: 66.67%; /* Two-thirds of the page width */
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+}
+
+
+/* Style for the left side (text) */
+.text-side {
+    flex: 2;
+    padding: 20px;
+}
+
+/* Style for the right side (photos) */
+.photo-side {
+    flex: 1;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
