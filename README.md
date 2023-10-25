@@ -7,3 +7,6 @@ Lab1: https://pruyontrarakk.github.io/computational_sound/lab1/lab1.html
 
 Lab 2: https://pruyontrarakk.github.io/computational_sound/lab2/lab2.html
 - Using the Web Audio API to create a keyboard, the user can choose between Additive synthesis, AM synthesis, and FM synthesis. Various parameters can be adjusted.  
+
+Lab 3: https://pruyontrarakk.github.io/computational_sound/lab3/lab3.html
+- Created different audio effects utilizing resonant high pass filters, resonant low pass filters, band-pass filters, white noise, and brown noise.
