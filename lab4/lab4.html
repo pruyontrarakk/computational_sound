@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf‐8">
+  <title> Lab4 </title>
+  <link rel = "stylesheet" href="lab4.css" />
+</head>
+
+<div class="banner-header">
+  Welcome to my Lab4 for Computational Sound!
+</div>
+<br>
+
+<body>
+  <p>This is an almost minimal command-based live coding engine. Press the button to re-evaluate your code.
+    This language allows you to specify a rhythmic pattern of beats by entering a space-separated list of times and pitches. 
+    Adding a number before a bracket will repeat given rythmic pattern. Oscillator type can be added in the beginning
+    followed by a ? (question mark) and will stay until changed. <br>
+    As examples:
+  </p>
+  <p>1+1@220 2@220*2 1*3@270</p>
+  <p>1@320 4[2@320*2 1*3@270]</p>
+  <p>triangle? 3@340 2[1@220 2@330]</p>
+  <button>re-evaluate</button>
+  <input type="text" id="code">
+</body>
+<script src="lab4.js"> </script>
+
+</html>
