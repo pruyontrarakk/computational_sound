@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Background Noise</title>
+
+    
+    <link rel = "stylesheet" href="final.css" />
+
+</head>
+
+<div class="banner-header">
+    Background Noise Generator
+</div>
+<br><br>
+
+
+  <body>
+
+    <br>
+    <p>ice cracking and fire sliders do not work!</p>
+    <p>ice cracking takes a few seconds to start playing!</p>
+    <p>rain and crickets not implemented yet</p>
+    <br>
+    <br>
+
+
+
+    <!-- ROW 1 -->
+    <button class = 'my_button' id = 'white_button' class = "b1" > White Noise </button>
+    <button class = 'my_button' id = 'ice_button' class = "b2" > Ice Cracking </button>
+    <button class = 'my_button' id = 'brook_button' class = "b3" > Babbling </button>
+    <button class = 'my_button' id = 'fire_button' class = "b4" > Fire </button>
+    
+        
+    <br> <br>
+
+    <input id="white_slider" class = "s1" type="range" min=0 max=10 
+            oninput="updateIndex(this.value)" 
+            onchange="updateIndex(this.value)"> 
+    </input>
+
+    <input id="ice_slider" class = "s2" type="range" min=0 max=10 
+            oninput="updateIndex(this.value)" 
+            onchange="updateIndex(this.value)"> 
+    </input>
+
+    <input id="brook_slider" class = "s3" type="range" min=0 max=10 
+            oninput="updateIndex(this.value)" 
+            onchange="updateIndex(this.value)"> 
+    </input>
+
+    <input id="fire_slider" class = "s4" type="range" min=0 max=10 
+            oninput="updateIndex(this.value)" 
+            onchange="updateIndex(this.value)"> 
+    </input>
+
+    
+    <br> <br> <br> <br>
+
+    <!-- ROW 2 -->
+
+    <button class = 'my_button' id = 'ocean_button' class = "b5" > Ocean Waves </button>
+    <button class = 'my_button' id = 'wind_button' class = "b6" > Wind </button>
+    <button class = 'my_button' id = 'rain_button' class = "b7" > Rain </button>
+    <button class = 'my_button' id = 'cricket_button' class = "b8" > Crickets </button>
+    
+    <br> <br>
+
+    <input id="ocean_slider" class = "s5" type="range" min=0 max=10 
+            oninput="updateIndex(this.value)" 
+            onchange="updateIndex(this.value)"> 
+    </input>
+
+    <input id="wind_slider" class = "s6" type="range" min=0 max=10 
+            oninput="updateIndex(this.value)" 
+            onchange="updateIndex(this.value)"> 
+    </input>
+
+    <input id="rain_slider" class = "s7" type="range" min=0 max=10 
+            oninput="updateIndex(this.value)" 
+            onchange="updateIndex(this.value)"> 
+    </input>
+
+    <input id="cricket_slider" class = "s8" type="range" min=0 max=10 
+            oninput="updateIndex(this.value)" 
+            onchange="updateIndex(this.value)"> 
+    </input>
+
+  </body>
+
+
+
+
+
+
+
+
+  <script src="final.js" ></script>
+
+
+</html>
