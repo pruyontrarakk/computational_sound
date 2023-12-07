@@ -1,0 +1,73 @@
+/* GENERAL SETTINGS */
+
+body {
+    font-size: 16px;
+    color: #a38671;
+    text-align: center;
+    font-family: palatino;
+}
+
+
+.banner-header {
+    color: #d0b38f;
+    padding: 20px;
+    font-size: 30px; 
+    font-weight: bold;
+
+}
+
+/* BUTTON DISPLAY */
+
+.my_button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #FFF9EE;
+    color: #d3bb9d; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 0px;
+
+    width: 100px;
+}
+
+
+.my_button.playing {
+    color: #79707e;
+    transform: scale(0.95);
+}
+
+
+
+/* ALLIGN BUTTON AND SLIDER */
+
+.my_button{
+    width: 150px;
+    margin-right: 35px;
+    margin-left: 35px;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+
+.s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8 {
+    width: 150px;
+    margin-right: 35px;
+    margin-left: 35px;
+}
+
+
+
+.animation {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    background-color: #FFF9EE;
+}
