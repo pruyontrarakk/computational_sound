@@ -31,54 +31,15 @@
 <body>
 
     <div class="container">
-    <p id = "body_blog"> In my final project project, I utilized the Web Audio API to create a captivating symphony of sounds that connected to a canvas of cellular automata. I played around with various elements like ADSR envelopes, oscillators, AM synthesis, filters, and more to shape each individual sound. Every sound demanded careful attention to detail, and in connecting it to the cellular automata, the sounds control the color and opacity of the cells. </p>
-    <br>
-    <p id = "body_blog">I chose to incorporate a variety of basic sounds that are typically known to be background noises. To tackle more complex sounds, I referred to Farnell's "<em>Designing Sound</em> Part IV: Practicals." This resource served as a valuable guide through the intricacies of sound design, and I'll share two examples of how I created sounds: Rain sounds and Cricket sounds.</p>
-    <br>
-    <p id = "body_blog">Here is the audio signal flow graph for these two sounds.</p>
-    <br>
-    <p id = "body_blog">INSERT IMAGE</p>
-    <br>
-    <p id = "body_blog">Creating the sound of raindrops began with white noise, filtering it to capture only low frequencies using a low pass filter. Introducing an oscillator and a phasor allowed me to create the sounds of individual rain droplets hitting a surface. Adjusting the frequencies so that it would match a typical raindrop was difficult as the sounds vary so much in real life depending on the size of the rain drop as well as the type of surface it would be hitting.</p>
-    <br>
-    <p id = "body_blog">The chirping of crickets starts off with a brown noise. Adding in a gain node, I used a very high-frequency oscillator to achieve the pitch, drawing inspiration from numerous YouTube videos, <a href="https://youtu.be/CpGtBnVZLSk?si=_hDi2z0BgPAo7PJ0">such as this one</a>, for accuracy. I then added a phasor to control the rate at which the cricket chirps before incorporating in AM synthesis for a nuanced and authentic sound.</p>
-    <br>
-    <p id = "body_blog">With the sounds perfected, I seamlessly integrated them into a user-friendly interface, allowing users to toggle sounds on and off. The addition of an amplitude-adjusting slider allows user to adjust the gain node for each sound. Together, these two features allow the user to overlay sounds and create unique sounds tailored to their preferences.</p>
-    <br>
-    <p id = "body_blog">Here is how I connected the button and slider.</p>
-    <img src="button-slider.png" alt="rules" width="500">
-    <br>
-    <p id = "body_blog">Seeking to add a layer of creativity, I explored the captivating realm of cellular automata.</p>
-    <br>
-    <p id = "body_blog">The way cellular automata works is through a discrete mathematical model with a grid of cells. The cells evolve over time depending a set of rules: </p>
-    <ol>
-        <li id = "body_blog">if a live cell has fewer than 2 live neighbors, it dies;</li>
-        <li id = "body_blog">if a live cell has more than 3 live neighbors, it dies;</li>
-        <li id = "body_blog">if a dead cell has exactly 3 live neighbors, it becomes alive;</li>
-        <li id = "body_blog">if neither of those 3 conditions are true, the cell remains in its current state.</li>
-    </ol>
-    <br>
-    <p id = "body_blog">Here is the code that enforces those rules:</p>
-    <img src="rules.png" alt="rules" width="500">
-    <br>
-    <p id = "body_blog">And here is the <b>cellular automata</b> running without any connections to sound! Click to start it over again.</p>
+    <p id = "body_blog"> In my final project project, I ... </p>
     <br>
 <!--  -->
     <div id="animation"></div>
     <p><span id="click"><span></span></p>
 <!--  -->
-
-    <br>
-    <p id = "body_blog">Drawing inspiration from pre-written cellular automata code exemplified in <a href="https://p5js.org/examples/simulate-game-of-life.html"> <strong>this website</strong></a>, I crafted the basic structure of one. Then, I connected the amplitudes of each sound, controlled by the slider values, to the colors of the cellular automata. Each sound is assigned a distinct color, and as their amplitudes increase, the opacity of the automata also increases. When multiple sounds are played simultaneously, the colors are overlaid, which creates new fun colors.    </p>
-    <br>
-    <p id = "body_blog">Here is an example of my code running!</p>
-    <br>
-    <p id = "body_blog">ENTER VIDEO</p>
     <br>
     <p id = "body_blog">Thank you for reading and enjoy this project!</p>
-
     </div>  
-
     <br>
     <a class="bottomRightButton" href="attempt.html" target="blank">SOUNDS & CELLULAR AUTOMATA</a>
     <br>
