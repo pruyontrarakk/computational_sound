@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>final</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
+    <link rel="stylesheet" href="final.css" />
+
+    <div class="banner-header">
+        Blog Post
+    </div>
+
+    <style>
+        #body_blog {
+            font-size: 17px;
+            color: #7e5f49;
+            text-align: left;
+            font-family: palatino;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+    <p id = "body_blog">Pru Yontrarak, Computational Sound Final, Fall 2023</p>
+    <br> <br>
+    <p id = "body_blog"> In my final project, I integrated the Web Audio API to create a dynamic musical experience linked to a cellular automata canvas. Using elements like ADSR envelopes, oscillators, AM synthesis, filters, and more, I designed various sound and chords. The interplay of sounds dictates the color, opacity, and speed of cells in the cellular automata, accompanied by a melody synchronized with automata movements playing over chords.</p>
+    <br>
+    <p id = "body_blog">I chose to incorporate the following sounds: bouncing, ocean waves, crickets, and wind. To tackle most of these sounds, I referred to Farnell's "<em>Designing Sound</em> Part IV: Practicals." Here is a brief explanation of these 4 sounds and their audio signal flow graph generated from the WebAudio plugin from Chrome:</p>
+    <br>
+    <p id = "body_blog"><b>Bouncing:</b> I used FM synthesis where frequency of the modulator modulates the frequency of the carrier. With each time it is played, the sound decreases to mimic a ball's gradual smaller bounces. </p>
+    <img src="bouncing.png" alt="bouncing" width="500">
+    <p id = "body_blog"><b>Ocean:</b> Starting off with a brown noise, I then connected two LFO's that would overlap each other. This allowed me to create periodic waveforms that sounds like ocean waves moving back and forth. </p>
+    <img src="ocean.png" alt="ocean" width="500">
+    <p id = "body_blog"><b>Crickets:</b> The chirping of crickets starts with a brown noise. Adding in a gain node, I used a very high-frequency oscillator to achieve the pitch. I then added a phasor to control the rate at which the cricket chirps before incorporating in AM synthesis.</p>
+    <img src="cricket.png" alt="cricket" width="500">
+    <p id = "body_blog"><b>Wind:</b> To create wind sounds, I started off with a white noise. I then filtered this white noise using both a band pass filter and a high pas filter. After filtering the sounds, I clipped the sounds, resulting in a more controlled and realistic representation of wind sounds. </p>
+    <br>
+    <img src="wind.png" alt="wind" width="500">
+    <br> <br>
+    <p id = "body_blog"> After making these sounds, I also made major and diminished chords as well as notes that would play with the chords, controlled by the movement of the cellular automata. Each of the chords has a different oscillator types / waveform shapes.</p>
+    <br>
+    <p id = "body_blog">With the sounds perfected, I seamlessly integrated them into a user-friendly interface, allowing users to toggle sounds on and off. The addition of an amplitude-adjusting slider (top row) allows user to adjust the gain node for each sound, and cellular automata speed-adjusting slider (bottom row). Together, these two features allow the user to overlay sounds and create unique compositions.</p>
+    <br>
+    <p id = "body_blog">Now lets explore more on the cellular automata.</p>
+    <br>
+    <p id = "body_blog">The way cellular automata works is through a discrete mathematical model with a grid of cells. The cells evolve over time depending a set of rules: </p>
+    <ol>
+        <li id = "body_blog">if a live cell has fewer than 2 live neighbors, it dies;</li>
+        <li id = "body_blog">if a live cell has more than 3 live neighbors, it dies;</li>
+        <li id = "body_blog">if a dead cell has exactly 3 live neighbors, it becomes alive;</li>
+        <li id = "body_blog">if neither of those 3 conditions are true, the cell remains in its current state.</li>
+    </ol>
+    <br>
+    <p id = "body_blog">And here is the <b>cellular automata</b> running without any connections to sound! Click to start it over again.</p>
+    <br>
+<!--  -->
+    <div id="animation"></div>
+    <p><span id="click"><span></span></p>
+<!--  -->
+
+    <br>
+    <p id = "body_blog">Drawing inspiration from pre-written cellular automata code exemplified in <a href="https://p5js.org/examples/simulate-game-of-life.html"> <strong>this website</strong></a>, I crafted the basic structure of one.  </p>
+    <br>
+    <p id = "body_blog"> In order to connect the cellular automata to the sounds, I did the following:</p>
+    <ol>
+        <li id = "body_blog">The colors of the cellular automata are connected to the sounds, allowing each sound to produce a different colored cells. That way, when the sounds are overlaid with each other, there could be new sounds created. </li>
+        <br>
+        <li id = "body_blog">The amplitude of each <i>individual</i> sound (bouncing, ocean waves, crickets, and wind) allows the opacity of the cells to change; when a particular sound has a higher amplitude, the cells become more opaque and when a particular sound has a higher amplitude, the cells become more transparent.</li>
+        <br>
+        <li id = "body_blog">The amplitude of the sounds (bouncing, ocean waves, crickets, and wind) <i>together</i> changes how fast the cells grow and die. In other words, if you turn on every single sound and move the sliders to the far right, increasing the amplitude to the max, the cells would be going through their growth and death process extremely quickly.</li>
+        <br>
+        <li id = "body_blog">An increase in the number of buttons toggled increases the size of the cells.</li>
+        <br>
+        <li id = "body_blog">When one of the chords' buttons (bottom row) are toggled, notes are played that are dependent on the speed at which the cells grow and die. The speed is determined by the slider provided.</li>
+    </ol>
+    <br>
+    <p id = "body_blog">Here is an example of my code running!</p>
+    <br>
+    <p id = "body_blog">ENTER VIDEO</p>
+    <br>
+    <p id = "body_blog">Thank you for reading and enjoy this project!</p>
+
+    </div>  
+
+    <br>
+    <a class="bottomRightButton" href="final.html" target="blank">BACK</a>
+    <br>
+
+
+    <script src="blog.js"></script>
+</body>
+
+
+
+
+</html>

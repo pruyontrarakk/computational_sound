@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sounds and cellular automata</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
+    <link rel="stylesheet" href="final.css" />
+
+    <div class="banner-header">
+        Sounds and Cellular Automata
+    </div>
+
+</head>
+<body>
+
+<!-- Pop up Instructions -->
+
+<button onclick="openPopup()" class = "buttonPopUp">?</button>
+<div class="overlay" id="overlay"></div>
+<div class="popup-container" id="popup">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <p id="popup-text">
+        How it works: <br>
+        <ol id="popup-text">1. Click anywhere to reset cellular automata everytime sound is adjusted. </ol>
+        <ol id="popup-text">2. Top row of buttons toggles sounds. Some sounds may take a few seconds to start playing.</ol>
+        <ol id="popup-text">3. Top row of sliders controls amplitude. Watch how the cellular automata changes depending on amplitude.</ol>
+        <ol id="popup-text">4. Bottom row of buttons toggles notes/chords.</ol>
+        <ol id="popup-text">5. Bottom row of sliders controls cellular automata's speed in playing notes.</ol>
+        <ol id="popup-text">6. Sounds can be overlayed with or without chords. Only one chord can be played at a time.</ol>
+    </p>
+</div>
+
+
+
+<!-- Celllular Automata -->
+
+  <br> <br>  
+<div id="animation"></div>
+<p><span id="click"><span></span></p>
+
+
+  <!-- ROW 1 -->
+  
+  <button class = 'my_button' id = 'ball_button' class = "b1" > 𓂂𓐍⚬˚𓐍</button>
+  <button class = 'my_button' id = 'ocean_button' class = "b2"> 𓆝﹏𓆞 </button>
+  <button class = 'my_button' id = 'cricket_button' class = "b3" > 𓆣𓆤 </button>
+  <button class = 'my_button' id = 'wind_button' class = "b4" > ࿔༄𖦹 </button>
+  
+      
+  <br> <br>
+
+  <input id="ball_slider" class = "s1" type="range" min=0 max=10 
+          oninput="updateIndex(this.value)" 
+          onchange="updateIndex(this.value)"> 
+  </input>
+
+  <input id="ocean_slider" class = "s2" type="range" min=0 max=10 
+          oninput="updateIndex(this.value)" 
+          onchange="updateIndex(this.value)"> 
+  </input>
+
+  <input id="cricket_slider" class = "s3" type="range" min=0 max=10 
+          oninput="updateIndex(this.value)" 
+          onchange="updateIndex(this.value)"> 
+  </input>
+
+  <input id="wind_slider" class = "s4" type="range" min=0 max=10 
+          oninput="updateIndex(this.value)" 
+          onchange="updateIndex(this.value)"> 
+  </input>
+
+  
+  <br> <br> <br> <br>
+
+  <!-- ROW 2 -->
+
+  <button class = 'my_button' id = 'major_button' class = "b5" > (\ /) <br> ( • ༝ •) </button>
+  <button class = 'my_button' id = 'rain_button' class = "b6" > (\ /) <br> ( -_-) </button>
+  <button class = 'my_button' id = 'brook_button' class = "b7" > (\ /) <br> ( o.o) </button>
+  <button class = 'my_button' id = 'fire_button' class = "b8" > (\ /) <br> ( ༝_༝) </button>
+  
+  <br> <br>
+
+  <input id="major_slider" class = "s5" type="range" min=0 max=10 
+          oninput="updateIndex(this.value)" 
+          onchange="updateIndex(this.value)"> 
+  </input>
+
+  <input id="rain_slider" class = "s6" type="range" min=0 max=10 
+          oninput="updateIndex(this.value)" 
+          onchange="updateIndex(this.value)"> 
+  </input>
+
+  <input id="brook_slider" class = "s7" type="range" min=0 max=10 
+          oninput="updateIndex(this.value)" 
+          onchange="updateIndex(this.value)"> 
+  </input>
+
+  <input id="fire_slider" class = "s8" type="range" min=0 max=10 
+          oninput="updateIndex(this.value)" 
+          onchange="updateIndex(this.value)"> 
+  </input>
+
+  <br>
+  <br>
+  <br>
+
+  <a class="bottomRightButton" href="blog.html" target="blank">BLOG</a>
+
+
+
+  <script src="final.js"></script>
+
+</body>
+
+
+
+
+</html>
